@@ -1,7 +1,7 @@
 import * as Immutable from 'immutable'
 import * as ReactCrop from 'react-image-crop'
 
-interface Value {
+export interface Value {
   imageUrl: string
   image: ImageInfo | null
   crop: CropInfo | null
@@ -9,14 +9,14 @@ interface Value {
   aspect: number
 }
 
-interface Size {
+export interface Size {
   width: number
   height: number
 }
 
-type ImageInfo = Size
+export type ImageInfo = Size
 
-interface CropInfo {
+export interface CropInfo {
   x: number
   y: number
   width: number
