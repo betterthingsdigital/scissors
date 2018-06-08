@@ -235,6 +235,7 @@
   user-select: none;
   display: flex;
   justify-content: center;
+  line-height: 0;
 }
 
 .bt-scissors__focal-point {
