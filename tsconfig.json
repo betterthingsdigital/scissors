@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "rootDir": "src",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "declaration": true,
+    "strict": true,
+    "target": "es5"
+  },
+  "files": ["src/index.ts", "src/scissors.tsx"]
+}
