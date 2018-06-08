@@ -5,16 +5,17 @@
   "main": "lib/index.js",
   "browser": "dist/scissors.js",
   "scripts": {
-    "build": "npm run build:lib && npm run build:umd",
-    "build:lib": "tsc --outDir lib --module commonjs",
-    "build:es": "tsc --outDir es --module es2015",
-    "build:umd": "npm run build:es && rollup --config",
-    "build:demo": "tsc -p demo",
+    "build": "npm run build:lib && npm run build:es && npm run build:umd",
+    "build:lib": "tsc --outDir lib --module commonjs -d",
+    "build:es": "tsc --outDir es --module es2015 -d",
+    "build:umd": "webpack --mode=production",
+    "build:demo": "webpack --config demo/webpack.config.js",
     "prebuild": "npm run clean",
-    "clean": "rimraf lib es dist",
+    "clean": "rimraf lib es dist demo/dist",
     "precommit": "lint-staged",
     "prepush": "npm test",
-    "test": "jest"
+    "test": "jest",
+    "serve-demo": "serve -l 7009 demo"
   },
   "lint-staged": {
     "*.{js,json}": [
@@ -76,6 +77,7 @@
     "@types/react": "16.3.17",
     "@types/react-dom": "16.0.6",
     "@types/react-image-crop": "3.0.0",
+    "awesome-typescript-loader": "5.0.0",
     "husky": "0.14.3",
     "immutable": "3.8.2",
     "jest": "23.1.0",
@@ -84,12 +86,12 @@
     "react": "16.4.0",
     "react-dom": "16.4.0",
     "rimraf": "2.6.2",
-    "rollup": "0.60.1",
-    "rollup-plugin-sourcemaps": "0.4.2",
-    "rollup-plugin-uglify": "4.0.0",
     "serve": "8.1.1",
+    "source-map-loader": "0.2.3",
     "ts-jest": "22.4.6",
-    "typescript": "2.9.1"
+    "typescript": "2.9.1",
+    "webpack": "4.12.0",
+    "webpack-cli": "3.0.3"
   },
   "dependencies": {
     "react-image-crop": "4.0.1"

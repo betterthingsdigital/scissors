@@ -31,7 +31,7 @@ class App extends React.Component<AppProps, AppState> {
   }
 
   public getImageUrl = (rotate: number) => {
-    return `img/img-${rotate}.jpeg`
+    return `img/img-${rotate}.jpg`
   }
 
   onRotate = (degrees: number) => {
