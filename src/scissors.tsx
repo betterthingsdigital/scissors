@@ -6,6 +6,8 @@ import { ScissorsState, Point } from './scissors-state'
 interface Props {
   scissors: ScissorsState
   onChange: (scissors: ScissorsState) => void
+  keepSelection?: boolean
+  disabled?: boolean
 }
 
 export class Scissors extends React.Component<Props> {
@@ -110,6 +112,8 @@ export class Scissors extends React.Component<Props> {
             onImageLoaded={this.onImageLoaded}
             crop={this.props.scissors.getRelativeCrop()!}
             onChange={this.onCropChange}
+            keepSelection={this.props.keepSelection}
+            disabled={this.props.disabled}
           />
         </div>
       </div>
