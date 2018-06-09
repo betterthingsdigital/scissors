@@ -1,8 +1,6 @@
 import { ScissorsState } from './scissors-state'
 
 describe('ScissorsState', () => {
-  beforeEach(() => {})
-
   test('relative crop', () => {
     // user
     let state = new ScissorsState({
