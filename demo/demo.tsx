@@ -24,7 +24,7 @@ class App extends React.Component<AppProps, AppState> {
     const rotate = 0
     this.state = {
       rotate,
-      scissors: ScissorsState.from({
+      scissors: new ScissorsState({
         imageUrl: this.getImageUrl(rotate),
       }),
     }

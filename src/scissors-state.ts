@@ -51,10 +51,6 @@ export class ScissorsState extends Immutable.Record({
     super(value)
   }
 
-  static from(value: Partial<Value>): ScissorsState {
-    return new ScissorsState(value)
-  }
-
   public isValid() {
     if (this.focus && this.crop) {
       return isPointInRect(this.focus, this.crop)

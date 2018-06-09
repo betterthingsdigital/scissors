@@ -5,7 +5,7 @@ describe('ScissorsState', () => {
 
   test('relative crop', () => {
     // user
-    let state = ScissorsState.from({
+    let state = new ScissorsState({
       imageUrl: '/img.jpeg',
       crop: {
         x: 10,
@@ -63,7 +63,7 @@ describe('ScissorsState', () => {
   })
 
   test('setImage when initial crop is not set', () => {
-    let state = ScissorsState.from({})
+    let state = new ScissorsState()
     state = state.setImage({ width: 600, height: 400 })
     expect(state.toJS()).toEqual({
       image: { width: 600, height: 400 },
@@ -81,7 +81,7 @@ describe('ScissorsState', () => {
 
   test('focus point', () => {
     // user
-    let state = ScissorsState.from({
+    let state = new ScissorsState({
       imageUrl: '/img.jpeg',
       crop: {
         x: 10,
@@ -142,7 +142,7 @@ describe('ScissorsState', () => {
 
   test('crop center', () => {
     // user
-    let state = ScissorsState.from({
+    let state = new ScissorsState({
       imageUrl: '/img.jpeg',
       crop: null,
       focus: { x: 20, y: 30 },
@@ -161,7 +161,7 @@ describe('ScissorsState', () => {
 
   test('aspect ratio', () => {
     // user
-    let state = ScissorsState.from({
+    let state = new ScissorsState({
       imageUrl: '/img.jpeg',
       crop: {
         x: 10,
@@ -208,7 +208,7 @@ describe('ScissorsState', () => {
 
   it('automatically sets crop when image is loaded and crop is not provided', () => {
     // user
-    let state = ScissorsState.from({
+    let state = new ScissorsState({
       imageUrl: '/img.jpeg',
       crop: null,
       aspect: 2 / 1,
@@ -233,7 +233,7 @@ describe('ScissorsState', () => {
 
   it('focus point can not be moved outside crop', () => {
     // user
-    let state = ScissorsState.from({
+    let state = new ScissorsState({
       imageUrl: '/img.jpeg',
       crop: {
         x: 10,
@@ -256,7 +256,7 @@ describe('ScissorsState', () => {
 
   it('crop can not be moved away from focus point', () => {
     // user
-    let state = ScissorsState.from({
+    let state = new ScissorsState({
       imageUrl: '/img.jpeg',
       crop: {
         x: 10,
