@@ -47,8 +47,8 @@ export class ScissorsState extends Immutable.Record({
   public focus!: Point | null
   public aspect!: number
 
-  constructor(value: Partial<Value>) {
-    super(value)
+  constructor(props?: Partial<Value>) {
+    props ? super(props) : super()
   }
 
   public isValid() {

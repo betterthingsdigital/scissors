@@ -1,6 +1,18 @@
 import { ScissorsState } from './scissors-state'
 
 describe('ScissorsState', () => {
+  describe('creation', () => {
+    it('does apply default values if no initial props are specified', () => {
+      let state = new ScissorsState()
+      expect(state.toJS()).toEqual({
+        aspect: 0,
+        crop: null,
+        focus: null,
+        image: null,
+        imageUrl: '',
+      })
+    })
+  })
   test('relative crop', () => {
     // user
     let state = new ScissorsState({
