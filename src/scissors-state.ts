@@ -41,16 +41,11 @@ export class ScissorsState extends Immutable.Record({
   focus: null,
   aspect: 0,
 }) {
-  // @ts-ignore
-  public imageUrl: string
-  // @ts-ignore
-  public image: ImageInfo | null
-  // @ts-ignore
-  public crop: CropInfo | null
-  // @ts-ignore
-  public focus: Point | null
-  // @ts-ignore
-  public aspect: number
+  public imageUrl!: string
+  public image!: ImageInfo | null
+  public crop!: CropInfo | null
+  public focus!: Point | null
+  public aspect!: number
 
   constructor(value: Partial<Value>) {
     super(value)
