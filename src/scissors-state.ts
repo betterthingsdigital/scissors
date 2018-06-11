@@ -150,6 +150,7 @@ export class ScissorsState extends Immutable.Record({
     let newState = this.merge({
       aspect,
       crop: null,
+      focus: null,
     }) as this
 
     if (newState.image) {
