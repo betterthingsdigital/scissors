@@ -39,9 +39,13 @@ export class Scissors extends React.Component<Props> {
         height: this.imageContainer.clientHeight,
       })
       if (scale) {
+        const scaledX = this.props.scissors.focus.x / scale.x
+        const scaledY = this.props.scissors.focus.y / scale.y
+        const relativeX = (scaledX / this.imageContainer.clientWidth) * 100
+        const relativeY = (scaledY / this.imageContainer.clientHeight) * 100
         return {
-          left: this.props.scissors.focus.x / scale.x,
-          top: this.props.scissors.focus.y / scale.y,
+          left: `${relativeX}%`,
+          top: `${relativeY}%`,
           display: 'block',
         }
       }
