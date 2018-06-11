@@ -19,7 +19,7 @@ export class Scissors extends React.Component<Props> {
     try {
       this.props.onChange(this.props.scissors.updateRelativeCrop(crop))
     } catch (err) {
-      // do not accept crop
+      // invalid crop
     }
   }
 
@@ -33,17 +33,12 @@ export class Scissors extends React.Component<Props> {
   }
 
   getFocusPointStyle() {
-    if (this.props.scissors.focus && this.imageContainer) {
-      const scale = this.props.scissors.getScale({
-        width: this.imageContainer.clientWidth,
-        height: this.imageContainer.clientHeight,
-      })
-      if (scale) {
-        return {
-          left: this.props.scissors.focus.x / scale.x,
-          top: this.props.scissors.focus.y / scale.y,
-          display: 'block',
-        }
+    const relativeFocus = this.props.scissors.getRelativeFocus()
+    if (relativeFocus) {
+      return {
+        left: `${relativeFocus.x}%`,
+        top: `${relativeFocus.y}%`,
+        display: 'block',
       }
     }
     return { display: 'none' }
@@ -73,8 +68,7 @@ export class Scissors extends React.Component<Props> {
           // only update the last drag position if the state accepted it
           this.lastDragPosition = { x: e.clientX, y: e.clientY }
         } catch (err) {
-          // TODO: let the parent know?
-          console.error(err)
+          // invalid focus
         }
       }
     }
