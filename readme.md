@@ -1,4 +1,4 @@
-![Scissors by Better Things Digital](./images/scissors-header@2x.png)
+![Scissors by Better Things Digital](https://raw.githubusercontent.com/betterthingsdigital/art/master/scissors/github-header.png)
 
 ## Dependencies
 
