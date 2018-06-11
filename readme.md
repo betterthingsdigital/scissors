@@ -14,7 +14,7 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      scissorsState: new ScissorsStateÍ({ imageUrl: '/path/to/img.jpg' }),
+      scissorsState: new ScissorsState({ imageUrl: '/path/to/img.jpg' }),
     }
 
     this.onScissorsChange = this.onScissorsChange.bind(this)

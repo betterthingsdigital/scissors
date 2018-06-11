@@ -164,8 +164,7 @@ export class ScissorsState extends Immutable.Record({
             ),
           )
         } catch (err) {
-          // this should never happen
-          console.error('failed to set initial crop')
+          // do not accept crop
         }
       }
     }

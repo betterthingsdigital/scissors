@@ -73,10 +73,10 @@
     "testRegex": "test.tsx?$"
   },
   "devDependencies": {
-    "@types/jest": "23.0.0",
+    "@types/jest": ">=22",
     "@types/react": ">=15",
-    "@types/react-dom": "16.0.6",
-    "@types/react-image-crop": "3.0.0",
+    "@types/react-dom": ">=15",
+    "@types/react-image-crop": ">=3",
     "awesome-typescript-loader": "5.0.0",
     "husky": "0.14.3",
     "immutable": "3.8.2",
