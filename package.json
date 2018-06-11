@@ -56,7 +56,9 @@
     "react"
   ],
   "files": [
-    "lib"
+    "lib",
+    "dist",
+    "es"
   ],
   "jest": {
     "transform": {
