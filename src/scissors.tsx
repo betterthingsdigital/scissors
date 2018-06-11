@@ -33,21 +33,12 @@ export class Scissors extends React.Component<Props> {
   }
 
   getFocusPointStyle() {
-    if (this.props.scissors.focus && this.imageContainer) {
-      const scale = this.props.scissors.getScale({
-        width: this.imageContainer.clientWidth,
-        height: this.imageContainer.clientHeight,
-      })
-      if (scale) {
-        const scaledX = this.props.scissors.focus.x / scale.x
-        const scaledY = this.props.scissors.focus.y / scale.y
-        const relativeX = (scaledX / this.imageContainer.clientWidth) * 100
-        const relativeY = (scaledY / this.imageContainer.clientHeight) * 100
-        return {
-          left: `${relativeX}%`,
-          top: `${relativeY}%`,
-          display: 'block',
-        }
+    const relativeFocus = this.props.scissors.getRelativeFocus()
+    if (relativeFocus) {
+      return {
+        left: `${relativeFocus.x}%`,
+        top: `${relativeFocus.y}%`,
+        display: 'block',
       }
     }
     return { display: 'none' }

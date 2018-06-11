@@ -127,6 +127,16 @@ export class ScissorsState extends Immutable.Record({
     return newState
   }
 
+  public getRelativeFocus() {
+    if (!this.image || !this.focus) {
+      return null
+    }
+    return {
+      x: (this.focus.x / this.image.width) * 100,
+      y: (this.focus.y / this.image.height) * 100,
+    }
+  }
+
   public setImageUrl(imageUrl: string) {
     return this.merge({
       imageUrl,
