@@ -19,7 +19,7 @@ export class Scissors extends React.Component<Props> {
     try {
       this.props.onChange(this.props.scissors.updateRelativeCrop(crop))
     } catch (err) {
-      // do not accept crop
+      // invalid crop
     }
   }
 
@@ -68,8 +68,7 @@ export class Scissors extends React.Component<Props> {
           // only update the last drag position if the state accepted it
           this.lastDragPosition = { x: e.clientX, y: e.clientY }
         } catch (err) {
-          // TODO: let the parent know?
-          console.error(err)
+          // invalid focus
         }
       }
     }

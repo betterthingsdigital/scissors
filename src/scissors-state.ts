@@ -174,7 +174,7 @@ export class ScissorsState extends Immutable.Record({
             ),
           )
         } catch (err) {
-          // do not accept crop
+          // invalid crop
         }
       }
     }
