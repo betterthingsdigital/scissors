@@ -67,28 +67,45 @@ class App extends React.Component<AppProps, AppState> {
 
   public render() {
     return (
-      <div>
-        <button onClick={() => this.onRotate(-90)}>Rotate Left</button>
-        <button onClick={() => this.onRotate(90)}>Rotate Right</button>
-        <select
-          onChange={this.onAspectChange}
-          value={this.state.scissors.aspect}
-        >
-          {aspectRatios.map(({ label, value }) => (
-            <option key={label} value={value}>
-              {label}
-            </option>
-          ))}
-        </select>
-        <button onClick={this.onEnableFocusPoint}>Enable Focal Point</button>
-        <button onClick={this.onDisableFocusPoint}>Disable Focal Point</button>
+      <div className="demo">
+        <div className="toolbar">
+          <button onClick={() => this.onRotate(-90)}>Rotate Left</button>
+          <button onClick={() => this.onRotate(90)}>Rotate Right</button>
+          <select
+            onChange={this.onAspectChange}
+            value={this.state.scissors.aspect}
+          >
+            {aspectRatios.map(({ label, value }) => (
+              <option key={label} value={value}>
+                {label}
+              </option>
+            ))}
+          </select>
+          <button onClick={this.onEnableFocusPoint}>Enable Focal Point</button>
+          <button onClick={this.onDisableFocusPoint}>
+            Disable Focal Point
+          </button>
+        </div>
         <Scissors
           scissors={this.state.scissors}
           onChange={this.onScissorsChange}
         />
+        <StateViewer state={this.state.scissors} />
       </div>
     )
   }
 }
+
+interface StateViewerProps {
+  state: ScissorsState
+}
+
+const StateViewer = ({ state }: StateViewerProps) => (
+  <div className="bt-scissors-state-viewer">
+    <pre>
+      <code>{JSON.stringify(state, null, 2)}</code>
+    </pre>
+  </div>
+)
 
 ReactDOM.render(<App />, document.getElementById('root'))
