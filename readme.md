@@ -4,6 +4,10 @@
 
 You need to install `react` and `immutable` yourself.
 
+## Demo
+
+Here's a little demo of what the component can do: https://scissors.netlify.com/
+
 ## Example
 
 ```js
