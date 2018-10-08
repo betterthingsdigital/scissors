@@ -38,3 +38,8 @@ class App extends React.Component {
   }
 }
 ```
+
+## Authors
+
+- Florian Hämmerle ([@lusbuab](https://twitter.com/lusbuab)) - [Better Things Digital](https://betterthings.digital)
+- Patrick Schedler - [Better Things Digital](https://betterthings.digital)
