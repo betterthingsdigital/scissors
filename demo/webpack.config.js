@@ -8,7 +8,7 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.json'],
   },
   devtool: 'source-map',
-  mode: 'development',
+  mode: 'production',
   module: {
     rules: [
       {
